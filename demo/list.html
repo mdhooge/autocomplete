@@ -8,7 +8,12 @@
 
       $(function(){
         $('#entry')
-            .autocomplete({source:["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"]})
+            .autocomplete({
+              source:["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"],
+              cb: {
+                select:function(item, i){ alert( item +' '+ i ) }
+              }
+            })
             .focus();
       });
       
